@@ -1,0 +1,42 @@
+{
+    "name": "rindow/rindow-module-smarty",
+    "type": "library",
+    "description": "Rindow compatible module for Smarty",
+    "keywords": ["rindow","framework","web","view","template","smarty"],
+    "license": "BSD-3-Clause",
+    "require": {
+        "php": ">=5.3.3",
+        "smarty/smarty": "3.*"
+    },
+    "require-dev": {
+        "smarty/smarty": "3.*",
+        "rindow/rindow-stdlib": "*",
+        "rindow/rindow-container": "*",
+        "rindow/rindow-web-http": "*",
+        "rindow/rindow-web-router": "*",
+        "rindow/rindow-web-form": "*",
+        "rindow/rindow-web-mvc": "*"
+    },
+    "suggest": {
+        "rindow/rindow-web-mvc": "When using with rindow-web-mvc",
+        "rindow/rindow-web-form": "When using web-form extensions"
+    },
+    "autoload": {
+        "psr-0": {
+            "Rindow\\Module\\Smarty\\": "src/"
+        }
+    },
+
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://rindow.github.io/rindow-packagist/packages.json",
+            "options": {
+                "ssl": {
+                    "verify_peer": "true"
+                }
+            }
+        }
+    ],
+    "minimum-stability": "dev"
+}
