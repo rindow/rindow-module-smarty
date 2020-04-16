@@ -1,6 +1,8 @@
 <?php
 namespace Rindow\Module\Smarty;
 
+use Smarty;
+
 class Module
 {
     public function getConfig()
@@ -42,6 +44,7 @@ class Module
                     'Form' => 'Rindow\Module\Smarty\Plugin\DefaultForm',
                     'Url'  => 'Rindow\Module\Smarty\Plugin\DefaultUrl',
                 ),
+                'escape_html'  => true,
             ),
         );
     }

@@ -21,6 +21,13 @@ class SmartyFactory
                 continue;
             $smarty->$key = $value;
         }
+        if(!isset($config['compile_dir'])) {
+            if($serviceManager->has('ConfigCacheFactory')) {
+                $smarty->compile_dir = $serviceManager->get('ConfigCacheFactory')
+                    ->getFileCache()->getPath().
+                    '/smarty/templates_c';
+            }
+        }
         if(!isset($config['plugins']))
             return $smarty;
         foreach ($config['plugins'] as $plugin) {
@@ -42,7 +49,7 @@ class SmartyFactory
                     $cacheable = $attributes['cacheable'];
                 if(array_key_exists('cache_attrs', $attributes))
                     $cache_attrs = $attributes['cache_attrs'];
-                $smarty->registerPlugin($attributes['type'],$name,$attributes['callback'],$cacheable,$cache_attrs); 
+                $smarty->registerPlugin($attributes['type'],$name,$attributes['callback'],$cacheable,$cache_attrs);
             }
             $loadedPlugins[$plugin] = true;
         }
