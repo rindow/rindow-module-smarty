@@ -6,10 +6,10 @@
     "license": "BSD-3-Clause",
     "require": {
         "php": ">=5.3.3",
-        "smarty/smarty": "3.*"
+        "smarty/smarty": "*"
     },
     "require-dev": {
-        "smarty/smarty": "3.*",
+        "smarty/smarty": "*",
         "rindow/rindow-stdlib": "1.*",
         "rindow/rindow-container": "1.*",
         "rindow/rindow-web-http": "1.*",
